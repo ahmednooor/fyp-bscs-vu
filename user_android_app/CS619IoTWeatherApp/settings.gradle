@@ -1,0 +1,2 @@
+rootProject.name='CS619 IoT Weather App'
+include ':app'

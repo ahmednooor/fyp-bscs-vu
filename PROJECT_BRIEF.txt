@@ -1,0 +1,65 @@
+IOT based Smart Weather Reporting System
+
+Project Domain / Category:
+    Automation / Embedded System Programming
+
+Abstract / Introduction:
+    In the present days automated systems or embedded systems have fewer manual 
+actions. They are much more flexible, reliable and much accurate as compared to 
+our manual systems. Due to increase in demand of such reliable and flexible 
+systems, we prefer an automated control system. 
+
+    Here we propose a smart weather reporting system over the internet. Our 
+proposed system allows for weather parameter reporting over the internet. It 
+allows the people to directly check the weather stats online without the need 
+of a weather forecasting agency. 
+
+    Our System uses temperature, humidity as well as rain sensor to monitor 
+weather and provide live reporting of the weather statistics. System must have 
+the capability to have location-based information so one can use any mapping 
+mechanism to elaborate/display these weather conditions based on GPS module. 
+The system constantly monitors temperature using temperature sensor, humidity 
+using humidity sensor and for rain. 
+
+    The system constantly transmits this data to the processing unit, which now 
+processes this data and keeps on transmitting it to the online web server & 
+mobile application. This data is live updated to be viewed on the online server 
+system. Also, system allows user to set alerts for instances, the system 
+provides alerts to user if the weather parameters cross those values. 
+
+    Thus, the IOT based weather reporting system provides an efficient 
+internet-based weather reporting system for users.
+
+Functional Requirements:
+    Hardware Module:
+        • Temperature Sensor Module
+        • Humidity sensor Module
+        • Rain Drop Sensing & Estimation Module
+        • Display Unit
+        • GSM/Wi-Fi based Internet Connectivity Module
+        • GPS Module
+    Mobile Application (Android):
+        • Capability to receive and manage an online database of the data 
+        from Hardware Module
+        • Capable compute the critical condition based on received data
+    Tools:
+        • Arduino Kit or Any other Single Board Processors
+        • Android Studio
+        • Web API’s
+        • C/C++ Programming Language
+        • Assembly Language
+        • Circuit Designing Software’s (OrCAD Pspice, WorkBench)
+        • Keil Embedded Development Kit
+        • Circuit Components (Resistors, Capacitors, oscillators etc.)
+        • GPS Module
+        • GSM/Wi-Fi Module
+        • Temperature Sensor
+        • Humidity Sensor
+
+Note: Virtual University of Pakistan will not provide any kind of hardware for 
+this project, student has to arrange required hardware by himself/herself. 
+
+Supervisor:
+    Name: Kalim Ullah
+    Email ID: -
+    Skype ID: -

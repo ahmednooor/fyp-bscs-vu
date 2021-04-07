@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">CS619 IoT Weather App</string>
+
+    <!--    login activity strings -->
+    <string name="login_btn_text">Log in to Device</string>
+    <string name="login_image_description">Log in image</string>
+    <string name="device_id_input_hint">Device ID e.g. d001</string>
+    <string name="user_password_input_hint">Your Password e.g. u001</string>
+
+    <!--    dashboard activity strings -->
+    <string name="logout_img_btn_description">Log out Button</string>
+    <string name="location_icon_description">Location Icon</string>
+    <string name="show_location_on_map">Show Location on Map →</string>
+    <string name="temperature">TEMPERATURE</string>
+    <string name="temperature_icon_description">Temperature Icon Image</string>
+    <string name="lower_limit">Lower Limit</string>
+    <string name="e_g_10">e.g. 10</string>
+    <string name="upper_limit">Upper Limit</string>
+    <string name="e_g_30">e.g. 30</string>
+    <string name="notify_me_when_temperature_goes_out_of_range">Notify me when temperature goes out of range.</string>
+    <string name="humidity">HUMIDITY</string>
+    <string name="humidity_icon_description">Humidity Icon Image</string>
+    <string name="notify_me_when_humidity_goes_out_of_range">Notify me when humidity goes out of range.</string>
+    <string name="rain">RAIN</string>
+    <string name="rain_icon_description">Rain Icon Image</string>
+    <string name="notify_me_when_rain_goes_out_of_range">Notify me when rain goes out of range.</string>
+    <string name="notification_dot">Notification Dot</string>
+    <string name="keep_fetching_data_periodically">Keep fetching data periodically</string>
+    <string name="title_activity_location">Device Location</string>
+    <string name="save">Save</string>
+    <string name="enter_server_url_here">Enter Server URL here</string>
+    <string name="settings_icon">Settings Icon</string>
+    <string name="credits_text">CREDITS: (Icons, Images etc.)\n1) https://www.flaticon.com/authors/super-basic-orbit/color</string>
+    <string name="about_text">ABOUT:\nFinal Year Project CS619 Spring &amp; Fall 2020\nVirtual University of Pakistan\nTitle: IoT based Smart Weather Reporting System\nStudent Name: Ahmed Noor E Alam\nSupervisor: Kalim Ullah</string>
+
+
+</resources>

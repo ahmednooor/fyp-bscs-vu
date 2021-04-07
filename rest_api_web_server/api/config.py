@@ -1,0 +1,10 @@
+DEBUG = True # False it in production
+SECRET_KEY = "24734a32-eb38-406d-b2ce-57c6fcd33e6d"
+CORS_HEADERS = 'Content-Type'
+
+SQLALCHEMY_DATABASE_URI = 'sqlite:///./database.db'
+SQLALCHEMY_TRACK_MODIFICATIONS = False
+
+DEFAULT_ADMIN_USERNAME = "admin"
+DEFAULT_ADMIN_PASSWORD = "12345"
+DEFAULT_ADMIN_NAME = "Admin User"

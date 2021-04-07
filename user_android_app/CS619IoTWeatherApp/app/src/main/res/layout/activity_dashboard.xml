@@ -1,0 +1,557 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    tools:context=".DashboardActivity">
+
+    <TextView
+        android:id="@+id/errTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#FFCDD2"
+        android:paddingStart="16dp"
+        android:paddingLeft="16dp"
+        android:paddingTop="12dp"
+        android:paddingEnd="16dp"
+        android:paddingRight="16dp"
+        android:paddingBottom="12dp"
+        android:textColor="#D50000"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/scrollView2" />
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        app:layout_constraintBottom_toTopOf="@id/errTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="auto"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/deviceName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="4dp"
+                    android:layout_marginRight="4dp"
+                    android:textColor="#212121"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toStartOf="@+id/logOutImgBtn"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/deviceId"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/logOutImgBtn" />
+
+                <ImageButton
+                    android:id="@+id/logOutImgBtn"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:alpha="0.7"
+                    android:background="#00FFFFFF"
+                    android:contentDescription="@string/logout_img_btn_description"
+                    android:padding="4dp"
+                    android:scaleType="fitCenter"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/round_power_settings_new_black_24dp" />
+
+                <TextView
+                    android:id="@+id/timestamp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/deviceId" />
+
+                <TextView
+                    android:id="@+id/lastCheckedTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="@+id/fetchingLoader"
+                    app:layout_constraintEnd_toStartOf="@+id/fetchingLoader"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/fetchingLoader" />
+
+                <ProgressBar
+                    android:id="@+id/fetchingLoader"
+                    style="@android:style/Widget.DeviceDefault.Light.ProgressBar.Small"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginRight="5dp"
+                    android:visibility="invisible"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/lastCheckedTextView"
+                    app:layout_constraintTop_toBottomOf="@+id/timestamp" />
+
+                <Switch
+                    android:id="@+id/shouldKeepFetchingData"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/keep_fetching_data_periodically"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/fetchingLoader" />
+
+                <View
+                    android:id="@+id/divider8"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="8dp"
+                    android:background="?attr/colorButtonNormal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/shouldKeepFetchingData" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/temperatureConstraintLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="8dp"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/divider8">
+
+                    <TextView
+                        android:id="@+id/temperatureHint"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/temperature"
+                        app:layout_constraintEnd_toStartOf="@+id/temperatureImg"
+                        app:layout_constraintStart_toEndOf="@+id/temperatureNotificationDot"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/temperatureNotificationDot"
+                        android:layout_width="6dp"
+                        android:layout_height="6dp"
+                        android:layout_marginEnd="4dp"
+                        android:layout_marginRight="4dp"
+                        android:contentDescription="@string/notification_dot"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="@+id/temperatureHint"
+                        app:layout_constraintEnd_toStartOf="@+id/temperatureHint"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/temperatureHint"
+                        app:srcCompat="@android:drawable/ic_notification_overlay" />
+
+                    <TextView
+                        android:id="@+id/temperatureValue"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textColor="#212121"
+                        android:textSize="28sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@+id/temperatureImg"
+                        app:layout_constraintEnd_toStartOf="@+id/temperatureImg"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/temperatureHint" />
+
+                    <ImageView
+                        android:id="@+id/temperatureImg"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:contentDescription="@string/temperature_icon_description"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/temperature" />
+
+                    <TextView
+                        android:id="@+id/temperatureLowLimitHint"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/lower_limit"
+                        app:layout_constraintEnd_toEndOf="@+id/temperatureLowLimitInput"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/temperatureImg" />
+
+                    <EditText
+                        android:id="@+id/temperatureLowLimitInput"
+                        android:layout_width="181dp"
+                        android:layout_height="wrap_content"
+                        android:autofillHints=""
+                        android:ems="10"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true"
+                        android:hint="@string/e_g_10"
+                        android:inputType="numberSigned|numberDecimal"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/temperatureLowLimitHint" />
+
+                    <TextView
+                        android:id="@+id/temperatureUpperLimitHint"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/upper_limit"
+                        app:layout_constraintBottom_toBottomOf="@+id/temperatureLowLimitHint"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/temperatureUpperLimitInput"
+                        app:layout_constraintTop_toBottomOf="@+id/temperatureImg" />
+
+                    <EditText
+                        android:id="@+id/temperatureUpperLimitInput"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:autofillHints=""
+                        android:ems="10"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true"
+                        android:hint="@string/e_g_30"
+                        android:inputType="numberSigned|numberDecimal"
+                        app:layout_constraintBottom_toBottomOf="@+id/temperatureLowLimitInput"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/temperatureLowLimitInput"
+                        app:layout_constraintTop_toBottomOf="@+id/temperatureUpperLimitHint" />
+
+                    <CheckBox
+                        android:id="@+id/shouldNotifyTemperature"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/notify_me_when_temperature_goes_out_of_range"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/temperatureLowLimitInput" />
+
+                    <View
+                        android:id="@+id/divider2"
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="8dp"
+                        android:background="?attr/colorButtonNormal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/shouldNotifyTemperature" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/humidityConstraintLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="8dp"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/temperatureConstraintLayout">
+
+                    <TextView
+                        android:id="@+id/humidityHint"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/humidity"
+                        app:layout_constraintEnd_toStartOf="@+id/humidityImg"
+                        app:layout_constraintStart_toEndOf="@+id/humidityNotificationDot"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/humidityNotificationDot"
+                        android:layout_width="6dp"
+                        android:layout_height="6dp"
+                        android:layout_marginEnd="4dp"
+                        android:layout_marginRight="4dp"
+                        android:contentDescription="@string/notification_dot"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="@+id/humidityHint"
+                        app:layout_constraintEnd_toStartOf="@id/humidityHint"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/humidityHint"
+                        app:srcCompat="@android:drawable/ic_notification_overlay" />
+
+                    <TextView
+                        android:id="@+id/humidityValue"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textColor="#212121"
+                        android:textSize="28sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@+id/humidityImg"
+                        app:layout_constraintEnd_toStartOf="@+id/humidityImg"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/humidityHint" />
+
+                    <ImageView
+                        android:id="@+id/humidityImg"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:contentDescription="@string/humidity_icon_description"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/humidity" />
+
+                    <TextView
+                        android:id="@+id/humidityLowLimitHint"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/lower_limit"
+                        app:layout_constraintEnd_toEndOf="@+id/humidityLowLimitInput"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/humidityImg" />
+
+                    <EditText
+                        android:id="@+id/humidityLowLimitInput"
+                        android:layout_width="181dp"
+                        android:layout_height="wrap_content"
+                        android:autofillHints=""
+                        android:ems="10"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true"
+                        android:hint="@string/e_g_10"
+                        android:inputType="numberDecimal"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/humidityLowLimitHint" />
+
+                    <TextView
+                        android:id="@+id/humidityUpperLimitHint"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/upper_limit"
+                        app:layout_constraintBottom_toBottomOf="@+id/humidityLowLimitHint"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/humidityUpperLimitInput"
+                        app:layout_constraintTop_toBottomOf="@+id/humidityImg" />
+
+                    <EditText
+                        android:id="@+id/humidityUpperLimitInput"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:autofillHints=""
+                        android:ems="10"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true"
+                        android:hint="@string/e_g_30"
+                        android:inputType="numberDecimal"
+                        app:layout_constraintBottom_toBottomOf="@+id/humidityLowLimitInput"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/humidityLowLimitInput"
+                        app:layout_constraintTop_toBottomOf="@+id/humidityUpperLimitHint" />
+
+                    <CheckBox
+                        android:id="@+id/shouldNotifyHumidity"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/notify_me_when_humidity_goes_out_of_range"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/humidityLowLimitInput" />
+
+                    <View
+                        android:id="@+id/divider3"
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="8dp"
+                        android:background="?attr/colorButtonNormal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/shouldNotifyHumidity" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/rainConstraintLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="8dp"
+                    android:focusable="auto"
+                    android:focusableInTouchMode="true"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/humidityConstraintLayout">
+
+
+                    <TextView
+                        android:id="@+id/rainHint"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/rain"
+                        app:layout_constraintEnd_toStartOf="@+id/rainImg"
+                        app:layout_constraintStart_toEndOf="@+id/rainNotificationDot"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/rainNotificationDot"
+                        android:layout_width="6dp"
+                        android:layout_height="6dp"
+                        android:layout_marginEnd="4dp"
+                        android:layout_marginRight="4dp"
+                        android:contentDescription="@string/notification_dot"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="@id/rainHint"
+                        app:layout_constraintEnd_toStartOf="@id/rainHint"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/rainHint"
+                        app:srcCompat="@android:drawable/ic_notification_overlay" />
+
+                    <TextView
+                        android:id="@+id/rainValue"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textColor="#212121"
+                        android:textSize="28sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@+id/rainImg"
+                        app:layout_constraintEnd_toStartOf="@+id/rainImg"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/rainHint" />
+
+                    <ImageView
+                        android:id="@+id/rainImg"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:contentDescription="@string/rain_icon_description"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/rain" />
+
+                    <TextView
+                        android:id="@+id/rainLowLimitHint"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/lower_limit"
+                        app:layout_constraintEnd_toEndOf="@+id/rainLowLimitInput"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/rainImg" />
+
+                    <EditText
+                        android:id="@+id/rainLowLimitInput"
+                        android:layout_width="181dp"
+                        android:layout_height="wrap_content"
+                        android:autofillHints=""
+                        android:ems="10"
+                        android:hint="@string/e_g_10"
+                        android:inputType="numberDecimal"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/rainLowLimitHint" />
+
+                    <TextView
+                        android:id="@+id/rainUpperLimitHint"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/upper_limit"
+                        app:layout_constraintBottom_toBottomOf="@+id/rainLowLimitHint"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/rainUpperLimitInput"
+                        app:layout_constraintTop_toBottomOf="@+id/rainImg" />
+
+                    <EditText
+                        android:id="@+id/rainUpperLimitInput"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:autofillHints=""
+                        android:ems="10"
+                        android:hint="@string/e_g_30"
+                        android:inputType="numberDecimal"
+                        app:layout_constraintBottom_toBottomOf="@+id/rainLowLimitInput"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/rainLowLimitInput"
+                        app:layout_constraintTop_toBottomOf="@+id/rainUpperLimitHint" />
+
+                    <CheckBox
+                        android:id="@+id/shouldNotifyRain"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/notify_me_when_rain_goes_out_of_range"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/rainLowLimitInput" />
+
+                    <View
+                        android:id="@+id/divider4"
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="8dp"
+                        android:background="?attr/colorButtonNormal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/shouldNotifyRain" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <View
+                    android:id="@+id/divider"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="4dp"
+                    android:background="?attr/colorButtonNormal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/showOnMapLink" />
+
+                <TextView
+                    android:id="@+id/showOnMapLink"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginTop="4dp"
+                    android:linksClickable="false"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:text="@string/show_location_on_map"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="16sp"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/locationIcon"
+                    app:layout_constraintTop_toBottomOf="@id/rainConstraintLayout" />
+
+                <ImageView
+                    android:id="@+id/locationIcon"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginLeft="4dp"
+                    android:contentDescription="@string/location_icon_description"
+                    android:visibility="visible"
+                    app:layout_constraintBottom_toBottomOf="@+id/showOnMapLink"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/showOnMapLink"
+                    app:srcCompat="@android:drawable/ic_menu_mylocation" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,50 @@
+@import url("./css/normalize.css");
+@import url("./css/skeleton.css");
+
+/* *,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.Login {
+  text-align: center;
+} */
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.color-danger {
+    color: crimson;
+}
+
+a.active {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.button-danger {
+    color: crimson !important;
+    border-color: crimson !important;
+    opacity: 0.75;
+}
+
+.button-danger:hover,
+.button-danger:focus {
+    opacity: 1;
+}
+
+form {
+    margin-bottom: 0 !important;
+}
